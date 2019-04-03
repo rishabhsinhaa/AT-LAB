@@ -1,6 +1,6 @@
 package com.rishabh.focusd.Util;
 
-import com.rharshit.focusd.R;
+import com.rishabh.focusd.R;
 
 public class Theme {
     private static int theme;

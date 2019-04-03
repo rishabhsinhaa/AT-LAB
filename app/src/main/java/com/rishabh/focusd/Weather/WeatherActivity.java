@@ -8,7 +8,7 @@ import android.util.Log;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.rharshit.focusd.R;
+import com.rishabh.focusd.R;
 import com.rishabh.focusd.Util.Theme;
 import com.rishabh.focusd.Weather.api.ApiHandler;
 import com.rishabh.focusd.Weather.api.WeatherInfo;

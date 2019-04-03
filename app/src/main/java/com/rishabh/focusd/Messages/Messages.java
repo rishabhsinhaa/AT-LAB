@@ -31,7 +31,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 
-import com.rharshit.focusd.R;
+import com.rishabh.focusd.R;
 import com.rishabh.focusd.Util.Theme;
 
 public class Messages extends AppCompatActivity {

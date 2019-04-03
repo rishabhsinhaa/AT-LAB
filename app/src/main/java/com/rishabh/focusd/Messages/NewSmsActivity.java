@@ -7,7 +7,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.rharshit.focusd.R;
+import com.rishabh.focusd.R;
 import com.rishabh.focusd.Util.Theme;
 
 public class NewSmsActivity extends AppCompatActivity{

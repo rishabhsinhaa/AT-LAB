@@ -13,7 +13,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.rishabh.focusd.Notes.db.DBHandler;
-import com.rharshit.focusd.R;
+import com.rishabh.focusd.R;
 import com.rishabh.focusd.Util.Theme;
 
 public class Signup extends AppCompatActivity {

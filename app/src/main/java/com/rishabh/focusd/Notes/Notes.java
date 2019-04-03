@@ -18,7 +18,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 
-import com.rharshit.focusd.R;
+import com.rishabh.focusd.R;
 import com.rishabh.focusd.Util.Theme;
 
 public class Notes extends AppCompatActivity

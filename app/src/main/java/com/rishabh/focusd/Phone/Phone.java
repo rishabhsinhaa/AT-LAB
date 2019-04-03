@@ -3,7 +3,7 @@ package com.rishabh.focusd.Phone;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import com.rharshit.focusd.R;
+import com.rishabh.focusd.R;
 import com.rishabh.focusd.Util.Theme;
 
 public class Phone extends AppCompatActivity {

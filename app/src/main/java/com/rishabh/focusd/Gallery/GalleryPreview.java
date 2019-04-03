@@ -6,7 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
-import com.rharshit.focusd.R;
+import com.rishabh.focusd.R;
 
 import java.io.File;
 

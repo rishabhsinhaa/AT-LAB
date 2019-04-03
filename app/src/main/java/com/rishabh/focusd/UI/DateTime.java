@@ -6,7 +6,7 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.rharshit.focusd.R;
+import com.rishabh.focusd.R;
 
 import java.util.Calendar;
 import java.util.HashMap;

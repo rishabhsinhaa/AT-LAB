@@ -33,7 +33,7 @@
         <activity android:name="com.rishabh.focusd.Phone.Phone" />
         <activity android:name="com.rishabh.focusd.Weather.WeatherActivity"></activity>
         <activity
-            android:name="com.rharshit.focusd.com.rishabh.focusd.MainActivity"
+            android:name="com.rishabh.focusd.MainActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -23,7 +23,7 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.rharshit.focusd.R;
+import com.rishabh.focusd.R;
 import com.rishabh.focusd.Camera.Camera;
 import com.rishabh.focusd.Contacts.Contacts;
 import com.rishabh.focusd.Gallery.Gallery;
@@ -234,17 +234,6 @@ public class MainActivity extends AppCompatActivity {
                         startActivity(i);
                     }
                 })
-        );
-        llScroll.addView(
-                new AppIcon(this, vWidth, vHeight,
-                        getResources().getDrawable(R.drawable.ic_music), "Music", new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        Intent i = new Intent(mContext, Music.class);
-                        startActivity(i);
-                    }
-                })
-        );
         llScroll.addView(
                 new AppIcon(this, vWidth, vHeight,
                         getResources().getDrawable(R.drawable.ic_weather), "Weather", new View.OnClickListener() {
