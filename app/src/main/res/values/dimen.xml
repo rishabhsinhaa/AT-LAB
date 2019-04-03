@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="notification_bg_corner">32dp</dimen>
+    <dimen name="notification_bg_padding">12dp</dimen>
+    <dimen name="notification_bg_margin">8dp</dimen>
+    <dimen name="notification_icon_dimen">64dp</dimen>
+    <dimen name="notification_icon_blur_dimen">96dp</dimen>
+    <dimen name="notification_icon_padding">12dp</dimen>
+    <dimen name="date_time_padding">16dp</dimen>
+</resources>

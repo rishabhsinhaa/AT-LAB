@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Wind Down</string>
+    <string name="service_name">Notification Listner</string>
+    <string name="notification_panel_header">Notifications</string>
+
+    <string name="title_activity_notes">Notes</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Username</string>
+    <string name="nav_header_subtitle">E-Mail</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_logout">Logout</string>
+</resources>
