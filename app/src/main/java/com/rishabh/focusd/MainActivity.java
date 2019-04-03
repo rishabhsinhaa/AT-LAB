@@ -168,7 +168,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void getNotifications() {
-        Intent i = new Intent("com.rharshit.winddown.NOTIFICATION_LISTENER_SERVICE");
+        Intent i = new Intent("com.rishabh.focusd.NOTIFICATION_LISTENER_SERVICE");
         i.putExtra("EXTRA_ACTION", "getNotificaitons");
         LocalBroadcastManager.getInstance(mContext).sendBroadcast(i);
     }
@@ -234,6 +234,7 @@ public class MainActivity extends AppCompatActivity {
                         startActivity(i);
                     }
                 })
+        );
         llScroll.addView(
                 new AppIcon(this, vWidth, vHeight,
                         getResources().getDrawable(R.drawable.ic_weather), "Weather", new View.OnClickListener() {
