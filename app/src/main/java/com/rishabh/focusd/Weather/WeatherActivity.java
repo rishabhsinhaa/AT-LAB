@@ -42,7 +42,7 @@ public class WeatherActivity extends AppCompatActivity {
         ((TextView) findViewById(R.id.lat_long)).setText(lat_long);
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://www.metaweather.com")
+                .baseUrl("https://openweathermap.org")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         final ApiHandler handler = retrofit.create(ApiHandler.class);

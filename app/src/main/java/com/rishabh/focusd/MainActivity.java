@@ -23,12 +23,10 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.rishabh.focusd.R;
-import com.rishabh.focusd.Camera.Camera;
+import com.rishabh.focusd.Camera.CameraApp;
 import com.rishabh.focusd.Contacts.Contacts;
 import com.rishabh.focusd.Gallery.Gallery;
 import com.rishabh.focusd.Messages.Messages;
-import com.rishabh.focusd.Music.Music;
 import com.rishabh.focusd.Notes.Login;
 import com.rishabh.focusd.Phone.Phone;
 import com.rishabh.focusd.UI.AppIcon;
@@ -37,7 +35,6 @@ import com.rishabh.focusd.UI.NotificationView;
 import com.rishabh.focusd.UI.Scroll;
 import com.rishabh.focusd.Util.Notification;
 import com.rishabh.focusd.Util.Theme;
-import com.rishabh.focusd.Weather.Weather;
 
 import java.util.ArrayList;
 
@@ -168,7 +165,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void getNotifications() {
-        Intent i = new Intent("com.rishabh.focusd.NOTIFICATION_LISTENER_SERVICE");
+        Intent i = new Intent("com.rharshit.winddown.NOTIFICATION_LISTENER_SERVICE");
         i.putExtra("EXTRA_ACTION", "getNotificaitons");
         LocalBroadcastManager.getInstance(mContext).sendBroadcast(i);
     }
@@ -217,10 +214,10 @@ public class MainActivity extends AppCompatActivity {
         );
         llScroll.addView(
                 new AppIcon(this, vWidth, vHeight,
-                        getResources().getDrawable(R.drawable.ic_camera), "Camera", new View.OnClickListener() {
+                        getResources().getDrawable(R.drawable.ic_camera), "CameraApp", new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Intent i = new Intent(mContext, Camera.class);
+                        Intent i = new Intent(mContext, CameraApp.class);
                         startActivity(i);
                     }
                 })
@@ -235,6 +232,16 @@ public class MainActivity extends AppCompatActivity {
                     }
                 })
         );
+       /* llScroll.addView(
+                new AppIcon(this, vWidth, vHeight,
+                        getResources().getDrawable(R.drawable.ic_music), "Music", new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent i = new Intent(mContext, Music.class);
+                        startActivity(i);
+                    }
+                })
+        );
         llScroll.addView(
                 new AppIcon(this, vWidth, vHeight,
                         getResources().getDrawable(R.drawable.ic_weather), "Weather", new View.OnClickListener() {
@@ -244,7 +251,7 @@ public class MainActivity extends AppCompatActivity {
                         startActivity(i);
                     }
                 })
-        );
+        );*/
     }
 
     private void addNotification(Notification n, String ticker) {
