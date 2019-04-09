@@ -214,7 +214,7 @@ public class MainActivity extends AppCompatActivity {
         );
         llScroll.addView(
                 new AppIcon(this, vWidth, vHeight,
-                        getResources().getDrawable(R.drawable.ic_camera), "CameraApp", new View.OnClickListener() {
+                        getResources().getDrawable(R.drawable.ic_camera), "Camera", new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         Intent i = new Intent(mContext, CameraApp.class);

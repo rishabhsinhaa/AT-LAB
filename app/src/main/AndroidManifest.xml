@@ -12,6 +12,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
 
 
     <uses-feature android:name="android.hardware.camera2.full" />
@@ -36,7 +37,6 @@
         <activity android:name="com.rishabh.focusd.Gallery.Gallery" />
         <activity android:name="com.rishabh.focusd.Messages.Messages" />
         <activity android:name="com.rishabh.focusd.Contacts.Contacts" />
-        <activity android:name="com.rishabh.focusd.Phone.Phone" />
         <activity android:name="com.rishabh.focusd.Weather.WeatherActivity"></activity>
         <activity
             android:name="com.rishabh.focusd.MainActivity"
@@ -61,6 +61,14 @@
             android:screenOrientation="landscape">
             <!-- configure this activity to use landscape orientation -->
 
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.rishabh.focusd.Phone.Phone"
+            android:label="Phone" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
