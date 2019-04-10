@@ -35,6 +35,7 @@ import com.rishabh.focusd.UI.NotificationView;
 import com.rishabh.focusd.UI.Scroll;
 import com.rishabh.focusd.Util.Notification;
 import com.rishabh.focusd.Util.Theme;
+import com.rishabh.focusd.Weather.Weather;
 
 import java.util.ArrayList;
 
@@ -249,7 +250,7 @@ public class MainActivity extends AppCompatActivity {
                         startActivity(i);
                     }
                 })
-        );
+        );*/
         llScroll.addView(
                 new AppIcon(this, vWidth, vHeight,
                         getResources().getDrawable(R.drawable.ic_weather), "Weather", new View.OnClickListener() {
@@ -259,7 +260,7 @@ public class MainActivity extends AppCompatActivity {
                         startActivity(i);
                     }
                 })
-        );*/
+        );
     }
 
     private void addNotification(Notification n, String ticker) {

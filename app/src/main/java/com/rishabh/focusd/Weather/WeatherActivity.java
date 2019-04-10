@@ -42,7 +42,7 @@ public class WeatherActivity extends AppCompatActivity {
         ((TextView) findViewById(R.id.lat_long)).setText(lat_long);
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://openweathermap.org")
+                .baseUrl("https://www.metaweather.com")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         final ApiHandler handler = retrofit.create(ApiHandler.class);
@@ -63,7 +63,7 @@ public class WeatherActivity extends AppCompatActivity {
                         String.format("%.2f°", info.consolidated_weather.get(0).the_temp)
                 );
                 ((TextView) findViewById(R.id.humidity)).setText(
-                        String.format("Humidity\n%d", info.consolidated_weather.get(0).humidity)
+                        String.format("      %d", info.consolidated_weather.get(0).humidity)
                 );
             }
 

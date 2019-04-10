@@ -56,7 +56,7 @@ public class Weather extends AppCompatActivity {
         });
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://openweathermap.org")
+                .baseUrl("https://www.metaweather.com")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         final ApiHandler handler = retrofit.create(ApiHandler.class);
