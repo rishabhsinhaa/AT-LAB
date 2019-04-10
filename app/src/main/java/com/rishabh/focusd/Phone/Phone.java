@@ -1,49 +1,80 @@
 package com.rishabh.focusd.Phone;
 
+import android.Manifest;
+import android.content.ContentResolver;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.database.Cursor;
 import android.net.Uri;
+import android.provider.ContactsContract;
+import android.support.annotation.NonNull;
+import android.support.design.widget.FloatingActionButton;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.Menu;
+import android.telephony.SmsManager;
+import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.ListView;
+import android.widget.Toast;
 
 import com.rishabh.focusd.R;
 import com.rishabh.focusd.Util.Theme;
 
 public class Phone extends AppCompatActivity {
 
-    EditText edittext1;
-    Button button1;
+    private static final int REQUEST_CALL=1;
+    private EditText mEditTextNumber;
+    private ImageButton f;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        setTheme(Theme.getTheme());
         super.onCreate(savedInstanceState);
+        Intent intent=getIntent();
+
         setContentView(R.layout.activity_phone);
-
-        //Getting the edittext and button instance
-        edittext1 = (EditText) findViewById(R.id.editText1);
-        button1 = (Button) findViewById(R.id.button1);
-
-        //Performing action on button click
-        button1.setOnClickListener(new View.OnClickListener() {
-
+        mEditTextNumber=findViewById( R.id.phone );
+        mEditTextNumber.setText( intent.getStringExtra( "Number" ) );
+        f=findViewById( R.id.placecall );
+        f.setOnClickListener( new View.OnClickListener() {
             @Override
-            public void onClick(View arg0) {
-                String number = edittext1.getText().toString();
-                Intent callIntent = new Intent(Intent.ACTION_CALL);
-                callIntent.setData(Uri.parse("tel:" + number));
-                startActivity(callIntent);
+            public void onClick(View view) {
+                makePhoneCall();
             }
+        } );
 
-        });
     }
 
+    private void makePhoneCall() {
+        String number=mEditTextNumber.getText().toString();
+        if(number.trim().length()>0)
+        {
+            if(ContextCompat.checkSelfPermission( Phone.this, Manifest.permission.CALL_PHONE )!= PackageManager.PERMISSION_GRANTED){
+                ActivityCompat.requestPermissions( Phone.this,new String[]{Manifest.permission.CALL_PHONE},REQUEST_CALL );
+            }else
+            {
+                String dial="tel:"+number;
+                startActivity( new Intent( Intent.ACTION_CALL, Uri.parse( dial ) ) );
+            }
+        }
+        else {
+            Toast.makeText( this, "Enter Phone Number", Toast.LENGTH_SHORT ).show();
+        }
+    }
 
-   /* @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.activity_main, menu);
-        return true;
-    }*/
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        if(requestCode== REQUEST_CALL){
+            if(grantResults.length>0&& grantResults[0]==PackageManager.PERMISSION_GRANTED){
+                makePhoneCall();
+            }else{
+                Toast.makeText( this, "Permission DENIED", Toast.LENGTH_SHORT ).show();
+            }
+        }
+        super.onRequestPermissionsResult( requestCode, permissions, grantResults );
+    }
+
 }

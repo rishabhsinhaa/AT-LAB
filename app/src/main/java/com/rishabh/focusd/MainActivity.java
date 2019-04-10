@@ -60,6 +60,9 @@ public class MainActivity extends AppCompatActivity {
     private ImageView scrollL;
     private ImageView scrollR;
 
+    private boolean showNotificaitons;
+
+
     private int vHeight;
     private int vWidth;
 
@@ -94,6 +97,7 @@ public class MainActivity extends AppCompatActivity {
                 hsView.smoothScrollBy(vWidth, 0);
             }
         });
+        showNotificaitons = false;
 
         hsView.setOnScrollChangeListener(new View.OnScrollChangeListener() {
             @Override
@@ -126,7 +130,11 @@ public class MainActivity extends AppCompatActivity {
         tvNotificationText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                svMain.smoothScrollBy(0, llNotification.getHeight());
+                showNotificaitons = !showNotificaitons;
+                for(int i=0; i<gvNotification.getChildCount(); i++){
+                    View n = gvNotification.getChildAt(i);
+                    n.setVisibility(showNotificaitons?View.VISIBLE:View.GONE);
+                }
             }
         });
 
@@ -140,7 +148,7 @@ public class MainActivity extends AppCompatActivity {
     private void notificationListener() {
         nReceiver = new NotificationReceiver();
         IntentFilter filter = new IntentFilter();
-        filter.addAction("com.rharshit.winddown.NOTIFICATION_LISTENER");
+        filter.addAction("com.rishabh.focusd.NOTIFICATION_LISTENER");
         LocalBroadcastManager.getInstance(mContext).registerReceiver(nReceiver, filter);
     }
 
@@ -165,7 +173,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void getNotifications() {
-        Intent i = new Intent("com.rharshit.winddown.NOTIFICATION_LISTENER_SERVICE");
+        Intent i = new Intent("com.rishabh.focusd.NOTIFICATION_LISTENER_SERVICE");
         i.putExtra("EXTRA_ACTION", "getNotificaitons");
         LocalBroadcastManager.getInstance(mContext).sendBroadcast(i);
     }
@@ -284,6 +292,7 @@ public class MainActivity extends AppCompatActivity {
                 n.getPackageName() :
                 getPackageManager().getApplicationLabel(appInfo).toString();
         NotificationView notificationView = new NotificationView(mContext, n, icon, appName, ticker);
+        notificationView.setVisibility(showNotificaitons?View.VISIBLE:View.GONE);
         gvNotification.addView(notificationView, gvNotification.getChildCount());
 //        notificationView.setOnClickListener(new View.OnClickListener() {
 //            @Override
@@ -303,10 +312,10 @@ public class MainActivity extends AppCompatActivity {
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setPositiveButton("Done", new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {
-                        dialog.cancel();
-                    }
-                })
+            public void onClick(DialogInterface dialog, int id) {
+                dialog.cancel();
+            }
+        })
                 .setNegativeButton("Dismiss", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         //  Action for 'NO' Button
