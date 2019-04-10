@@ -23,7 +23,7 @@ public class NotificationListener extends NotificationListenerService {
         mContext = this;
         notificationListenerReciver = new NotificationListenerReceiver();
         IntentFilter filter = new IntentFilter();
-        filter.addAction("com.rharshit.winddown.NOTIFICATION_LISTENER_SERVICE");
+        filter.addAction("com.rishabh.focusd.NOTIFICATION_LISTENER_SERVICE");
         LocalBroadcastManager.getInstance(mContext).registerReceiver(notificationListenerReciver, filter);
     }
 
@@ -39,7 +39,7 @@ public class NotificationListener extends NotificationListenerService {
 
 //        Log.i(TAG, "onNotificationPosted");
 //        Log.i(TAG, "ID :" + sbn.getId() + "\t" + sbn.getNotification().tickerText + "\t" + sbn.getPackageName());
-        Intent i = new Intent("com.rharshit.winddown.NOTIFICATION_LISTENER");
+        Intent i = new Intent("com.rishabh.focusd.NOTIFICATION_LISTENER");
         Notification n = new Notification(sbn);
         Bundle bundle = new Bundle();
         bundle.putParcelable("NOTIFICATION", n);
@@ -56,7 +56,7 @@ public class NotificationListener extends NotificationListenerService {
     public void onNotificationRemoved(StatusBarNotification sbn) {
 //        Log.i(TAG, "onNOtificationRemoved");
 //        Log.i(TAG, "ID :" + sbn.getId() + "\t" + sbn.getNotification().tickerText + "\t" + sbn.getPackageName());
-        Intent i = new Intent("com.rharshit.winddown.NOTIFICATION_LISTENER");
+        Intent i = new Intent("com.rishabh.focusd.NOTIFICATION_LISTENER");
         Notification n = new Notification(sbn);
         Bundle bundle = new Bundle();
         bundle.putParcelable("NOTIFICATION", n);
@@ -75,7 +75,7 @@ public class NotificationListener extends NotificationListenerService {
             if (intent.getStringExtra("EXTRA_ACTION").equals("getNotificaitons")) {
                 for (StatusBarNotification sbn : NotificationListener.this.getActiveNotifications()) {
 //                    Log.i(TAG, "onNotificationListed");
-                    Intent i = new Intent("com.rharshit.winddown.NOTIFICATION_LISTENER");
+                    Intent i = new Intent("com.rishabh.focusd.NOTIFICATION_LISTENER");
                     Notification n = new Notification(sbn);
                     Bundle bundle = new Bundle();
                     bundle.putParcelable("NOTIFICATION", n);
