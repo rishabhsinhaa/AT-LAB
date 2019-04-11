@@ -1,5 +1,6 @@
 package com.rishabh.focusd.Messages;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -23,6 +24,8 @@ public class NewSmsActivity extends AppCompatActivity{
         address = (EditText) findViewById(R.id.address);
         message = (EditText) findViewById(R.id.message);
         send_btn = (Button) findViewById(R.id.send_btn);
+        Intent intent=getIntent();
+        address.setText(intent.getStringExtra("Number"));
 
 
         send_btn.setOnClickListener(new View.OnClickListener() {

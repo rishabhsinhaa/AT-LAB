@@ -53,7 +53,6 @@ public class Messages extends AppCompatActivity {
         setTheme(Theme.getTheme());
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_messages);
-
         CacheUtils.configureCache(this);
 
         listView = (ListView) findViewById(R.id.listView);
