@@ -241,16 +241,6 @@ public class MainActivity extends AppCompatActivity {
                     }
                 })
         );
-       /* llScroll.addView(
-                new AppIcon(this, vWidth, vHeight,
-                        getResources().getDrawable(R.drawable.ic_music), "Music", new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        Intent i = new Intent(mContext, Music.class);
-                        startActivity(i);
-                    }
-                })
-        );*/
         llScroll.addView(
                 new AppIcon(this, vWidth, vHeight,
                         getResources().getDrawable(R.drawable.ic_weather), "Weather", new View.OnClickListener() {
