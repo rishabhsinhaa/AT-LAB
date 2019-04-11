@@ -86,6 +86,7 @@
                     android:layout_height="wrap_content"
                     android:textSize="40sp"
                     android:layout_gravity="center"
+                    android:textAlignment="center"
                     android:text="Fetching"
                     android:id="@+id/the_temp"/>
                 <TextView
@@ -95,14 +96,40 @@
                     android:layout_gravity="start"
                     android:text="C"/>
             </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="vertical">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:textSize="24sp"
-                android:text="Fetching"
+                android:text="Humidity  "
                 android:textAlignment="center"
-                android:id="@+id/humidity"/>
+                android:id="@+id/humidity1"/>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:textSize="24sp"
+                    android:text=""
+                    android:textAlignment="center"
+                    android:id="@+id/humidity"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/percent"
+                    android:textSize="24sp"
+                    android:layout_gravity="start"
+                    android:text="%"/>
+                </LinearLayout>
+            </LinearLayout>
         </LinearLayout>
         <Space
             android:layout_width="wrap_content"

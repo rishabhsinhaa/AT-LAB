@@ -63,7 +63,7 @@ public class WeatherActivity extends AppCompatActivity {
                         String.format("%.2f°", info.consolidated_weather.get(0).the_temp)
                 );
                 ((TextView) findViewById(R.id.humidity)).setText(
-                        String.format("Humidity\n%d", info.consolidated_weather.get(0).humidity)
+                        String.format("      %d", info.consolidated_weather.get(0).humidity)
                 );
             }
 
