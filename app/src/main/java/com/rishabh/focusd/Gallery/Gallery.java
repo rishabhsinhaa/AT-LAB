@@ -204,14 +204,14 @@ class AlbumAdapter extends BaseAdapter {
         holder.gallery_count.setId(position);
         holder.gallery_title.setId(position);
 
-        HashMap < String, String > song = new HashMap < String, String > ();
-        song = data.get(position);
+        HashMap < String, String > pics= new HashMap < String, String > ();
+        pics = data.get(position);
         try {
-            holder.gallery_title.setText(song.get(Function.KEY_ALBUM));
-            holder.gallery_count.setText(song.get(Function.KEY_COUNT));
+            holder.gallery_title.setText(pics.get(Function.KEY_ALBUM));
+            holder.gallery_count.setText(pics.get(Function.KEY_COUNT));
 
             Glide.with(activity)
-                    .load(new File(song.get(Function.KEY_PATH))) // Uri of the picture
+                    .load(new File(pics.get(Function.KEY_PATH))) // Uri of the picture
                     .into(holder.galleryImage);
 
 
