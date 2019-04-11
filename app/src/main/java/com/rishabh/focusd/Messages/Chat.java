@@ -224,22 +224,22 @@ class ChatAdapter extends BaseAdapter {
         holder.msgFrom.setId(position);
         holder.msgYou.setId(position);
 
-        HashMap < String, String > song = new HashMap < String, String > ();
-        song = data.get(position);
+        HashMap < String, String > msgs = new HashMap < String, String > ();
+        msgs = data.get(position);
         try {
 
 
-            if(song.get(Function.KEY_TYPE).contentEquals("1"))
+            if(msgs.get(Function.KEY_TYPE).contentEquals("1"))
             {
-                holder.lblMsgFrom.setText(song.get(Function.KEY_NAME));
-                holder.txtMsgFrom.setText(song.get(Function.KEY_MSG));
-                holder.timeMsgFrom.setText(song.get(Function.KEY_TIME));
+                holder.lblMsgFrom.setText(msgs.get(Function.KEY_NAME));
+                holder.txtMsgFrom.setText(msgs.get(Function.KEY_MSG));
+                holder.timeMsgFrom.setText(msgs.get(Function.KEY_TIME));
                 holder.msgFrom.setVisibility(View.VISIBLE);
                 holder.msgYou.setVisibility(View.GONE);
             }else{
                 holder.lblMsgYou.setText("You");
-                holder.txtMsgYou.setText(song.get(Function.KEY_MSG));
-                holder.timeMsgYou.setText(song.get(Function.KEY_TIME));
+                holder.txtMsgYou.setText(msgs.get(Function.KEY_MSG));
+                holder.timeMsgYou.setText(msgs.get(Function.KEY_TIME));
                 holder.msgFrom.setVisibility(View.GONE);
                 holder.msgYou.setVisibility(View.VISIBLE);
             }
